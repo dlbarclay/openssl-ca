@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-cat /root/ca/intermediate/certs/intermediate.cert.pem \
-	/root/ca/certs/ca.cert.pem > /root/ca/intermediate/certs/ca-chain.cert.pem
+source vars
 
-chmod 444 /root/ca/intermediate/certs/ca-chain.cert.pem
+cat $CA_ROOTDIR/intermediate/certs/intermediate.cert.pem \
+	$CA_ROOTDIR/certs/ca.cert.pem > $CA_ROOTDIR/intermediate/certs/ca-chain.cert.pem
+
+chmod 444 $CA_ROOTDIR/intermediate/certs/ca-chain.cert.pem
 

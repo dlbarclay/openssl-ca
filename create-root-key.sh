@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-openssl genrsa -aes256 -out /root/ca/private/ca.key.pem 4096
-chmod 400 /root/ca/private/ca.key.pem 
+source vars
+
+openssl genrsa -aes256 -out $CA_ROOTDIR/private/ca.key.pem 4096
+chmod 400 $CA_ROOTDIR/private/ca.key.pem 
 

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
+source vars
+
 openssl genrsa -aes256 \
-	-out /root/ca/intermediate/private/intermediate.key.pem 4096
-chmod 400 /root/ca/intermediate/private/intermediate.key.pem
+	-out $CA_ROOTDIR/intermediate/private/intermediate.key.pem 4096
+chmod 400 $CA_ROOTDIR/intermediate/private/intermediate.key.pem
 

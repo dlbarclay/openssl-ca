@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+EXEC_SCRIPT=$(basename ${0#-})
+THIS_SCRIPT=$(basename ${BASH_SOURCE})
+
+echo "This is the default vars file. Please run ./configure.sh before contining"
+
+# If script has been sourced , exit to shell
+# This prevents the user from accidentally killing their own shell by running it
+if [[ ! ${THIS_SCRIPT} = ${EXEC_SCRIPT} ]]; then
+    exit 1
+fi
+
+# The contents of this script will be replaced when you run configure.sh
